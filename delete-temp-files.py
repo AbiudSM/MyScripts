@@ -1,6 +1,6 @@
 import os, shutil
 
-def delete_files(dir):
+def delete_files(dir:str):
     os.chdir(dir)
 
     dirs = os.listdir()
@@ -16,5 +16,10 @@ def delete_files(dir):
         except Exception as e:
             print(e)
 
-delete_files('C:/Windows/Temp')
-delete_files('C:/Users/rober/AppData/Local/Temp')
+temp_paths:list[str] = [
+    'C:\\Windows\\Temp',
+    os.environ.get('USERPROFILE') + '\\AppData\\Local\\Temp'
+]
+
+for path in temp_paths:
+    delete_files(path)

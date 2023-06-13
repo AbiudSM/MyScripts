@@ -1,3 +1,5 @@
+# ffmpeg is required -> git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
+
 # size = kbps * time
 
 import os, ffmpeg
